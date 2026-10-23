@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Robotics · CVPR 2027 Workshop</title>
+<meta name="description" content="Agentic Robotics: Towards General-Purpose Embodied Intelligence. A half-day workshop at CVPR 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f141a'/%3E%3Ccircle cx='16' cy='13' r='6' fill='none' stroke='%23fff' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='13' r='2' fill='%23e0662f'/%3E%3Cpath d='M9 26h14' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --display:"Bricolage Grotesque","Inter",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --gutter:clamp(16px,4.5vw,64px); --maxw:1180px; --r:14px;
+  --bg:#f4f6f9; --surface:#ffffff; --ink:#0f141a; --muted:#5b6573; --faint:#8a93a0;
+  --line:#e3e7ee; --accent:#c4532a; --accent-soft:#fbe9e1; --chip:#eef1f5;
+  --t1:#2491a8; --t2:#d6603a; --t3:#7b5cc8; --t4:#3f8f5a; --t5:#c9962c; --t6:#4a6fd1; --t7:#b5476b;
+  --shadow:0 1px 2px rgba(15,20,26,.05),0 8px 24px rgba(15,20,26,.06);
+}
+[data-theme="dark"]{
+  --bg:#0d1116; --surface:#151b23; --ink:#eef1f5; --muted:#a3acb9; --faint:#6f7a88;
+  --line:#242c37; --accent:#f08a5d; --accent-soft:#2b1c15; --chip:#1d242e;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* nav */
+.nav{position:fixed;top:14px;left:0;right:0;z-index:50;padding:0 var(--gutter)}
+.nav-inner{max-width:calc(var(--maxw) - 40px);margin:0 auto;display:flex;align-items:center;gap:12px;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 18px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;white-space:nowrap}
+.brand svg{width:26px;height:26px}
+.links{display:flex;gap:4px;margin-left:auto}
+.links a{text-decoration:none;color:var(--muted);font-size:14.5px;padding:6px 11px;border-radius:999px}
+.links a:hover{color:var(--ink);background:var(--chip)}
+.iconbtn{width:36px;height:36px;border-radius:50%;border:none;background:var(--chip);color:var(--ink);display:grid;place-items:center;cursor:pointer;flex:none;text-decoration:none}
+.iconbtn svg{width:17px;height:17px}
+.menu{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
+.mosaic{position:absolute;inset:-10% -20% -10% 38%;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;transform:rotate(-12deg) skewX(4deg);opacity:.95;pointer-events:none}
+.tile{border-radius:16px;aspect-ratio:4/3;padding:14px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:var(--mono);font-size:11px;box-shadow:0 10px 30px rgba(15,20,26,.12);position:relative;overflow:hidden}
+.tile b{font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.28),transparent 55%)}
+.tile svg{width:38px;height:38px;opacity:.9}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 38%,color-mix(in srgb,var(--bg) 70%,transparent) 58%,transparent 85%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.35;mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.eyebrow{font-size:clamp(17px,1.6vw,21px);font-weight:500;margin:0 0 4px}
+.eyebrow span{color:var(--accent);display:block}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(56px,9vw,112px);line-height:.92;letter-spacing:-.035em;margin:26px 0 22px}
+.sub{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:560px;margin:0 0 26px}
+.meta{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:13.5px;padding:13px 18px;border-radius:12px;margin-bottom:14px}
+.meta i{opacity:.45;font-style:normal}
+.note{display:inline-block;font-size:13px;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:4px 11px;border-radius:999px;margin-bottom:26px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14.5px;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:30px 24px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+.stat .n{font-family:var(--display);font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-.03em}
+.stat .l{color:var(--muted);margin-top:6px}
+.stat .s{font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+/* sections */
+section.block{padding:96px 0 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(38px,5vw,60px);letter-spacing:-.03em;line-height:1;margin:0 0 14px}
+.lede{color:var(--muted);max-width:720px;font-size:17.5px;margin:0 0 36px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.about .card{padding:28px 30px}
+.about p{margin:0 0 14px}
+.about p:last-child{margin:0}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 12px}
+.def{font-family:var(--display);font-size:24px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
+.def em{color:var(--accent);font-style:normal}
+
+.questions{display:grid;gap:12px}
+.q{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;padding:22px 26px}
+.q .num{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--faint)}
+.q h3{margin:0 0 4px;font-size:18.5px;font-weight:650}
+.q p{margin:0;color:var(--muted)}
+
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.topic{padding:22px 24px;position:relative;overflow:hidden}
+.topic .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px}
+.topic h3{font-size:17px;margin:0 0 8px;display:flex;align-items:center}
+.topic p{margin:0;color:var(--muted);font-size:15px}
+.topic .bar{position:absolute;left:0;right:0;bottom:0;height:3px;opacity:.8}
+.settings{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:14.5px}
+.pill{font-size:13.5px;padding:5px 12px;border-radius:999px;background:var(--chip);color:var(--ink)}
+
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.person{padding:22px;display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .15s,border-color .15s}
+a.person:hover{transform:translateY(-2px);border-color:var(--faint)}
+.avatar{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px;color:#fff}
+.person h3{margin:0;font-size:17.5px}
+.person .aff{color:var(--muted);font-size:14.5px;line-height:1.45}
+.person .bio{color:var(--muted);font-size:14px;line-height:1.5}
+.tag{align-self:flex-start;font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
+.tag.acc{background:var(--accent-soft);color:var(--accent)}
+.speakers{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.tbd-card{border-style:dashed;box-shadow:none;background:transparent;align-items:flex-start;justify-content:center;color:var(--faint)}
+.tbd-card .avatar{background:var(--chip);color:var(--faint)}
+
+table{width:100%;border-collapse:collapse}
+.sched{padding:6px 26px}
+.sched td{padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.sched tr:last-child td{border-bottom:none}
+.sched td:first-child{width:170px;font-family:var(--mono);font-size:13.5px;color:var(--faint)}
+.sched b{font-weight:600}
+.sched span{color:var(--muted);font-size:14.5px}
+
+.cfp{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.cfp .card{padding:28px 30px}
+.dates td{padding:12px 0;border-bottom:1px solid var(--line)}
+.dates tr:last-child td{border-bottom:none}
+.dates td:last-child{text-align:right;font-family:var(--mono);font-size:13.5px;color:var(--faint)}
+.tbd{font-family:var(--mono);font-size:12.5px;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:6px}
+ul.clean{margin:0;padding-left:18px}
+ul.clean li{margin:6px 0;color:var(--muted)}
+
+.contact{margin:96px 0 0;padding:44px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;background:var(--ink);color:var(--bg);border-radius:20px}
+.contact h2{font-size:clamp(30px,4vw,44px);margin:0 0 6px}
+.contact p{margin:0;opacity:.7}
+.contact .btn{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+@media (max-width:900px){
+  .links{display:none}
+  .menu{display:grid}
+  .links + .iconbtn{margin-left:auto}
+  .links.open{display:flex;flex-direction:column;position:absolute;top:62px;left:var(--gutter);right:var(--gutter);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
+  .mosaic{inset:auto -40% -30% -10%;height:55%;opacity:.35}
+  .hero::before{background:linear-gradient(180deg,var(--bg) 55%,color-mix(in srgb,var(--bg) 60%,transparent))}
+  .about,.cfp{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .q{grid-template-columns:44px 1fr;padding:20px}
+  .q .num{font-size:30px}
+  .sched td:first-child{width:110px}
+  .contact{padding:30px}
+}
+@media (max-width:520px){ .brand span{display:none} .meta{font-size:12.5px} }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><circle cx="16" cy="13" r="6" fill="none" stroke="var(--bg)" stroke-width="2.5"/><circle cx="16" cy="13" r="2" fill="#e0662f"/><path d="M9 26h14" stroke="var(--bg)" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span>Agentic Robotics</span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#cfp">Call for Papers</a>
+      <a href="#organizers">Organizers</a>
+    </nav>
+    <a class="iconbtn" href="https://github.com/AgenticRobotics" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+    <button class="iconbtn" id="theme" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
+    <button class="iconbtn menu" id="menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Foundation models can read, plan and reason.
+      <span>What does it take for a robot to act on a goal in the physical world?</span></p>
+    <h1>Agentic<br>Robotics</h1>
+    <p class="sub">Towards general-purpose embodied intelligence. A workshop on perception, reasoning, and action in robots that pursue goals through interaction.</p>
+    <div class="meta"><span>CVPR 2027 Workshop</span><i>·</i><span>Seattle, WA</span><i>·</i><span>June 20 or 21, 2027</span><i>·</i><span>Half-day, in person</span></div>
+    <br><span class="note">Date and room to be confirmed by CVPR</span>
+    <div class="ctas">
+      <a class="btn primary" href="#cfp">Call for Papers →</a>
+      <a class="btn" href="#speakers">Invited speakers</a>
+      <a class="btn" href="#schedule">Schedule</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">½</div><div class="l">day, in person</div><div class="s">invited talks · papers · discussion</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">driving questions</div><div class="s">perception → deployment</div></div>
+    <div class="stat"><div class="n">7</div><div class="l">topic areas</div><div class="s">across the full robot stack</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">organizers</div><div class="s">6 institutions</div></div>
+  </div>
+
+  <section class="block" id="about">
+    <h2>About</h2>
+    <p class="lede">Agentic robotics brings perception, reasoning, and action into systems that pursue goals through interaction with the physical world.</p>
+    <div class="about">
+      <div class="card">
+        <p class="kicker">Abstract</p>
+        <p>Advances in foundation models, robot learning, and world models create opportunities for robots to interpret instructions, plan over extended horizons, and adapt through feedback. This workshop brings together researchers in computer vision, robotics, and machine learning to examine the foundations and practice of agentic robotics.</p>
+        <p>Topics include grounded perception, planning, memory, policy learning, human and multi-robot collaboration, and evaluation. Through invited talks, contributed research, and discussion, we aim to identify shared challenges and opportunities for general-purpose embodied intelligence.</p>
+        <p>Our organizing theme is the relationship between individual capabilities and the behavior of the complete robotic system: how advances in visual understanding, planning, memory, policy learning, and interaction translate into effective action.</p>
+      </div>
+      <div class="card">
+        <p class="kicker">What we mean</p>
+        <p class="def">We use <em>agentic robotics</em> to describe goal-directed robotic systems that select and revise their actions through repeated interaction with the physical world.</p>
+        <p style="color:var(--muted)">This covers modular, hierarchical, and end-to-end systems, connecting established work on perception, planning, control, and robot learning with emerging approaches based on foundation models, world models, and agent architectures.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="questions">
+    <h2>Driving questions</h2>
+    <p class="lede">The workshop is organized around five questions.</p>
+    <div class="questions">
+      <div class="card q"><div class="num">01</div><div><h3>How should perception support goal-directed behavior?</h3><p>What visual, spatial, and multimodal representations help robots understand objects, affordances, and changing environments?</p></div></div>
+      <div class="card q"><div class="num">02</div><div><h3>How should reasoning and planning connect to action?</h3><p>How can agents translate goals into executable behavior, coordinate high-level decisions with control, and revise plans using feedback?</p></div></div>
+      <div class="card q"><div class="num">03</div><div><h3>How can robotic agents learn and adapt through experience?</h3><p>What roles should demonstrations, reinforcement learning, memory, world models, and online interaction play in improving behavior?</p></div></div>
+      <div class="card q"><div class="num">04</div><div><h3>How should robots collaborate with people and other agents?</h3><p>How can communication, shared understanding, and human guidance support effective cooperation?</p></div></div>
+      <div class="card q"><div class="num">05</div><div><h3>How should we evaluate and deploy agentic robotic systems?</h3><p>Which tasks, metrics, and experimental protocols capture generalization, reliability, safety, and efficiency across extended interactions?</p></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="topics">
+    <h2>Topics</h2>
+    <p class="lede">We welcome methodological, empirical, and systems contributions across agentic robotics, including established approaches and emerging directions. Topics include, but are not limited to:</p>
+    <div class="topics" id="topicGrid"></div>
+    <div class="settings">Settings: <span class="pill">Manipulation</span><span class="pill">Navigation</span><span class="pill">Mobile manipulation</span><span class="pill">Human–robot interaction</span><span class="pill">Multi-robot interaction</span></div>
+  </section>
+
+  <section class="block" id="speakers">
+    <h2>Invited speakers</h2>
+    <p class="lede">More speakers to be announced.</p>
+    <div class="people speakers">
+      <a class="card person" href="https://web.stanford.edu/~pavone/index.html" target="_blank" rel="noopener">
+        <div class="avatar" style="background:var(--t1)">MP</div>
+        <div><h3>Marco Pavone</h3><div class="aff">Stanford University</div></div>
+        <div class="bio">Directs the Autonomous Systems Laboratory at Stanford. Works on the analysis, design, and control of autonomous systems.</div>
+        <span class="tag acc">To be confirmed</span>
+      </a>
+      <a class="card person" href="https://xiaolonw.github.io/" target="_blank" rel="noopener">
+        <div class="avatar" style="background:var(--t3)">XW</div>
+        <div><h3>Xiaolong Wang</h3><div class="aff">Meta Superintelligence Labs · UC San Diego</div></div>
+        <div class="bio">Connects visual representation learning with physical interaction and robot skill learning.</div>
+        <span class="tag acc">To be confirmed</span>
+      </a>
+      <div class="card person tbd-card">
+        <div class="avatar">+</div>
+        <div><h3>More speakers</h3><div class="aff">To be announced</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="schedule">
+    <h2>Schedule</h2>
+    <p class="lede">Preliminary half-day program. Exact times depend on the slot assigned by CVPR. Talks will be recorded through CVPR's provided Zoom room.</p>
+    <div class="card sched">
+      <table>
+        <tr><td>TBD</td><td><b>Opening remarks</b></td></tr>
+        <tr><td>TBD</td><td><b>Invited talks</b><br><span>Speakers to be announced</span></td></tr>
+        <tr><td>TBD</td><td><b>Contributed paper presentations</b><br><span>Oral spotlights from accepted papers</span></td></tr>
+        <tr><td>TBD</td><td><b>Poster session</b></td></tr>
+        <tr><td>TBD</td><td><b>Panel discussion</b><br><span>Format to be announced</span></td></tr>
+        <tr><td>TBD</td><td><b>Closing remarks</b></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="cfp">
+    <h2>Call for papers</h2>
+    <p class="lede">We invite submissions on any topic listed above. Submission format, page limits, review process, and archival options will be announced soon.</p>
+    <div class="cfp">
+      <div class="card">
+        <p class="kicker">Important dates</p>
+        <table class="dates">
+          <tr><td>Submission portal opens</td><td><span class="tbd">TBD</span></td></tr>
+          <tr><td>Paper submission deadline</td><td><span class="tbd">TBD</span></td></tr>
+          <tr><td>Notification to authors</td><td><span class="tbd">TBD</span></td></tr>
+          <tr><td>Camera-ready deadline</td><td><span class="tbd">TBD</span></td></tr>
+          <tr><td>Workshop day</td><td>June 20 or 21, 2027</td></tr>
+        </table>
+        <p style="color:var(--faint);font-size:13.5px;margin:14px 0 0">All deadlines are 23:59 Anywhere on Earth (AoE).</p>
+      </div>
+      <div class="card">
+        <p class="kicker">Submission details</p>
+        <ul class="clean">
+          <li>Format and page limit: <span class="tbd">TBD</span></li>
+          <li>Archival / non-archival track: <span class="tbd">TBD</span></li>
+          <li>Review: double-blind, by the program committee <span class="tbd">TBD</span></li>
+          <li>Submission portal (OpenReview): <span class="tbd">TBD</span></li>
+          <li>Challenge or competition: <span class="tbd">TBD</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="organizers">
+    <h2>Organizers</h2>
+    <p class="lede">The workshop brings together researchers from robotics, computer vision, and machine learning.</p>
+    <div class="people" id="orgGrid"></div>
+  </section>
+
+  <div class="contact">
+    <div><h2>Get in touch</h2><p>Questions about the workshop, submissions, or speaking? Email the organizers.</p></div>
+    <a class="btn" href="mailto:yunbeizhang.ml@gmail.com">yunbeizhang.ml@gmail.com</a>
+  </div>
+
+  <footer>
+    <span>Agentic Robotics · CVPR 2027 Workshop</span>
+    <span>Seattle, WA · June 2027</span>
+  </footer>
+</div>
+</main>
+
+<script>
+const topics=[
+ ["Perception and physical grounding","Active perception, spatial reasoning, 3D scene understanding, affordances, and multimodal representations for action.","--t1"],
+ ["Foundation models and agent architectures","Vision-language-action models, generalist robot policies, hierarchical and modular agents, and interfaces between foundation models and robotic skills.","--t3"],
+ ["Reasoning, planning, and execution","Task decomposition, language-conditioned planning, tool use, feedback-driven control, execution monitoring, and failure recovery.","--t2"],
+ ["Memory, world models, and learning","Experience retrieval, persistent state, predictive models, imitation and reinforcement learning, continual learning, and adaptation through interaction.","--t4"],
+ ["Human–robot and multi-agent collaboration","Instruction following, communication, human feedback, shared autonomy, multi-robot coordination, and collaborative decision-making.","--t5"],
+ ["Data, simulation, and evaluation","Robot datasets, simulation, sim-to-real transfer, benchmarks, reproducibility, and evaluation of complete robotic agents.","--t6"],
+ ["Reliable and efficient deployment","Safety, uncertainty, robustness, real-time inference, resource constraints, and operation in changing environments.","--t7"]
+];
+document.getElementById('topicGrid').innerHTML=topics.map(([t,d,c])=>`<div class="card topic"><h3><span class="dot" style="background:var(${c})"></span>${t}</h3><p>${d}</p><div class="bar" style="background:var(${c})"></div></div>`).join('');
+
+const orgs=[
+ ["Yunbei Zhang","Tulane University","https://yunbeizhang.github.io/","Primary organizer","--t2",""],
+ ["Yijiang Li","UC San Diego","https://williamium3000.github.io/","Secondary organizer","--t1",""],
+ ["Weirui Ye","MIT CSAIL","https://yewr.github.io/","","--t3","Postdoc. Reinforcement learning, generative world models, agentic robotics, lifelong robot learning."],
+ ["Zijian Jin","Meta","https://jinzijian.github.io/","","--t6","Research engineer. Coding agents, asynchronous RL, scalable post-training."],
+ ["Xilun Zhang","Stanford University","https://xilunzhangrobo.github.io/","","--t4","Ph.D. student. Adaptive robotic systems, dynamics learning, test-time verification."],
+ ["Janet Wang","Tulane University","","","--t7","Ph.D. student. Reliable visual recognition, transfer learning, generative modeling for medical imaging."],
+ ["Isabella Liu","UC San Diego","https://www.liuisabella.com/","","--t5","Ph.D. candidate. Embodied agents, robot learning, 3D world modeling."],
+ ["Mengyue Yang","University of Bristol","https://ymy4323460.github.io/","","--t1","Lecturer in AI. Reinforcement learning and causality, causal world models."]
+];
+const ini=n=>n.split(' ').map(s=>s[0]).join('');
+document.getElementById('orgGrid').innerHTML=orgs.map(([n,a,u,role,c,bio])=>{
+  const tag=`<div class="tag${role?' acc':''}">${role||'Organizer'}</div>`;
+  const inner=`<div class="avatar" style="background:var(${c})">${ini(n)}</div><div><h3>${n}</h3><div class="aff">${a}</div></div>${bio?`<div class="bio">${bio}</div>`:''}${tag}`;
+  return u?`<a class="card person" href="${u}" target="_blank" rel="noopener">${inner}</a>`:`<div class="card person">${inner}</div>`;
+}).join('');
+
+// decorative hero mosaic
+const icons={
+ arm:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 20h8M8 20v-4l5-6 4 2M13 10l-2-4M17 12l2 3"/><circle cx="8" cy="16" r="1.5"/></svg>',
+ eye:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+ plan:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg>',
+ brain:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4a3 3 0 00-3 0zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 0"/></svg>',
+ people:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2 1.5-4 4-4s4 2 4 4"/></svg>',
+ cube:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg>',
+ shield:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>'
+};
+const tiles=[
+ ["Grounded perception","eye","--t1","3D · affordances"],["VLA policies","arm","--t3","vision → action"],["Long-horizon planning","plan","--t2","goals → steps"],["Memory","brain","--t4","persistent state"],
+ ["World models","cube","--t6","predict · imagine"],["Human–robot teaming","people","--t5","shared autonomy"],["Safe deployment","shield","--t7","reliability"],["Mobile manipulation","arm","--t1","navigate · grasp"],
+ ["Failure recovery","plan","--t2","monitor · replan"],["Sim-to-real","cube","--t3","transfer"],["Multi-robot","people","--t4","coordination"],["Active perception","eye","--t6","look to act"],
+ ["Continual learning","brain","--t5","adapt online"],["Evaluation","shield","--t1","benchmarks"],["Tool use","arm","--t7","skills"],["Task decomposition","plan","--t4","hierarchy"]
+];
+const m=document.getElementById('mosaic');
+m.innerHTML=[...tiles,...tiles.slice(0,8)].map(([t,i,c,s],k)=>`<div class="tile" style="background:linear-gradient(140deg,var(${c}),color-mix(in srgb,var(${c}) 55%,#0f141a));${k%2?'transform:translateY(40px)':''}">${icons[i]}<div><div style="opacity:.75;margin-bottom:4px">${s}</div><b>${t}</b></div></div>`).join('');
+
+// theme
+const root=document.documentElement;
+let saved=null; try{saved=localStorage.getItem('ar-theme')}catch(e){}
+const prefersDark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
+if(saved==='dark'||(!saved&&prefersDark)) root.setAttribute('data-theme','dark');
+document.getElementById('theme').onclick=()=>{const d=root.getAttribute('data-theme')==='dark';d?root.removeAttribute('data-theme'):root.setAttribute('data-theme','dark');try{localStorage.setItem('ar-theme',d?'light':'dark')}catch(e){}};
+const links=document.getElementById('links');
+document.getElementById('menu').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+</script>
+</body>
+</html>
