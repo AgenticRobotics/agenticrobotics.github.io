@@ -44,23 +44,13 @@ a{color:inherit}
 .menu{display:none}
 
 /* hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
-.hero{--tl:max(var(--gutter),calc((100% - var(--maxw))/2 + var(--gutter)))}
-.mosaic{position:absolute;top:calc(50% - 443.5px - 483px);height:calc(887px + 966px);left:calc(var(--tl) + 335px);width:820px;display:grid;grid-template-columns:repeat(8,245px);grid-auto-rows:184px;gap:6px 14px;transform:rotate(-12deg) skewX(4deg);opacity:.95;pointer-events:none}
-
-
-.tile{border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:var(--mono);font-size:12px;box-shadow:0 10px 30px rgba(15,20,26,.12);position:relative;overflow:hidden}
-.tile b{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
-.tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.28),transparent 55%)}
-.tile svg{width:44px;height:44px;opacity:.9}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 0,var(--bg) calc(var(--tl) + 335px),color-mix(in srgb,var(--bg) 70%,transparent) calc(var(--tl) + 535px),transparent calc(var(--tl) + 805px))}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.35;mask-image:linear-gradient(90deg,#000 0,#000 calc(var(--tl) + 355px),transparent calc(var(--tl) + 555px))}
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;padding:140px 0 72px}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.45;mask-image:radial-gradient(ellipse 70% 70% at 70% 40%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 70% 40%,#000,transparent 75%)}
 .hero .wrap{position:relative;z-index:2;width:100%}
-.eyebrow{font-size:clamp(17px,1.6vw,21px);font-weight:500;margin:0 0 4px}
-.eyebrow span{color:var(--accent);display:block}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(56px,9vw,112px);line-height:.92;letter-spacing:-.035em;margin:26px 0 22px}
-.sub{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:560px;margin:0 0 26px}
-.meta{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:13.5px;padding:13px 18px;border-radius:12px;margin-bottom:14px}
+.kicker-top{font-family:var(--mono);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(56px,9vw,112px);line-height:.92;letter-spacing:-.035em;margin:18px 0 20px}
+.sub{font-size:clamp(19px,2vw,25px);color:var(--muted);max-width:640px;margin:0 0 18px;font-weight:500}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;color:var(--muted);font-family:var(--mono);font-size:14px;margin-bottom:34px}
 .meta i{opacity:.45;font-style:normal}
 .note{display:inline-block;font-size:13px;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:4px 11px;border-radius:999px;margin-bottom:26px}
 .ctas{display:flex;flex-wrap:wrap;gap:10px}
@@ -145,9 +135,6 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
   .menu{display:grid}
   .links + .iconbtn{margin-left:auto}
   .links.open{display:flex;flex-direction:column;position:absolute;top:62px;left:var(--gutter);right:var(--gutter);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
-  .mosaic{top:auto;bottom:-30%;left:-10%;width:150%;height:55%;opacity:.35}
-  .hero::after{mask-image:none;opacity:.2}
-  .hero::before{background:linear-gradient(180deg,var(--bg) 55%,color-mix(in srgb,var(--bg) 60%,transparent))}
   .about,.cfp{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(3){border-left:none}
@@ -186,14 +173,11 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
 
 <main id="top">
 <section class="hero">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow">Foundation models can read, plan and reason.
-      <span>What does it take for a robot to act on a goal in the physical world?</span></p>
+    <p class="kicker-top">CVPR 2027 Workshop</p>
     <h1>Agentic<br>Robotics</h1>
-    <p class="sub">Towards general-purpose embodied intelligence. A workshop on perception, reasoning, and action in robots that pursue goals through interaction.</p>
-    <div class="meta"><span>CVPR 2027 Workshop</span><i>·</i><span>Seattle, WA</span><i>·</i><span>June 20 or 21, 2027</span><i>·</i><span>Half-day, in person</span></div>
-    <br><span class="note">Date and room to be confirmed by CVPR</span>
+    <p class="sub">Towards General-Purpose Embodied Intelligence</p>
+    <div class="meta"><span>Seattle, WA</span><i>·</i><span>June 20 or 21, 2027 (TBC)</span><i>·</i><span>Half-day, in person</span></div>
     <div class="ctas">
       <a class="btn primary" href="#cfp">Call for Papers →</a>
       <a class="btn" href="#speakers">Invited speakers</a>
@@ -354,26 +338,7 @@ document.getElementById('orgGrid').innerHTML=orgs.map(([n,a,u,img,c])=>{
   return `<a class="card person" href="${u}" target="_blank" rel="noopener">${av}<div><h3>${n}</h3><div class="aff">${a}</div></div></a>`;
 }).join('');
 
-// decorative hero mosaic
-const icons={
- arm:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 20h8M8 20v-4l5-6 4 2M13 10l-2-4M17 12l2 3"/><circle cx="8" cy="16" r="1.5"/></svg>',
- eye:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
- plan:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg>',
- brain:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4a3 3 0 00-3 0zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 0"/></svg>',
- people:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2 1.5-4 4-4s4 2 4 4"/></svg>',
- cube:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg>',
- shield:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>'
-};
-const tiles=[
- ["Grounded perception","eye","--t1","3D · affordances"],["VLA policies","arm","--t3","vision → action"],["Long-horizon planning","plan","--t2","goals → steps"],["Memory","brain","--t4","persistent state"],
- ["World models","cube","--t6","predict · imagine"],["Human–robot teaming","people","--t5","shared autonomy"],["Safe deployment","shield","--t7","reliability"],["Mobile manipulation","arm","--t1","navigate · grasp"],
- ["Failure recovery","plan","--t2","monitor · replan"],["Sim-to-real","cube","--t3","transfer"],["Multi-robot","people","--t4","coordination"],["Active perception","eye","--t6","look to act"],
- ["Continual learning","brain","--t5","adapt online"],["Evaluation","shield","--t1","benchmarks"],["Tool use","arm","--t7","skills"],["Task decomposition","plan","--t4","hierarchy"]
-];
-const m=document.getElementById('mosaic');
-const tileHTML=([t,i,c,s],col)=>`<div class="tile" style="background:linear-gradient(140deg,var(${c}),color-mix(in srgb,var(${c}) 55%,#0f141a));${col%2?'transform:translateY(40px)':''}">${icons[i]}<div><div style="opacity:.75;margin-bottom:4px">${s}</div><b>${t}</b></div></div>`;
-let out='';for(let r=0;r<14;r++)for(let c=0;c<8;c++)out+=tileHTML(tiles[((r+13)*4+c)%tiles.length],c);
-m.innerHTML=out;
+
 
 // theme
 const root=document.documentElement;
