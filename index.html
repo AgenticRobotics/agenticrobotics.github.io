@@ -45,8 +45,8 @@ a{color:inherit}
 
 /* hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
-.mosaic{position:absolute;inset:-10% -20% -10% 38%;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;transform:rotate(-12deg) skewX(4deg);opacity:.95;pointer-events:none}
-.tile{border-radius:16px;aspect-ratio:4/3;padding:14px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:var(--mono);font-size:11px;box-shadow:0 10px 30px rgba(15,20,26,.12);position:relative;overflow:hidden}
+.mosaic{position:absolute;top:-30%;left:calc(50% + 140px);width:1700px;display:grid;grid-template-columns:repeat(7,220px);gap:18px;transform:rotate(-12deg) skewX(4deg);transform-origin:top left;opacity:.95;pointer-events:none}
+.tile{border-radius:16px;height:170px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:var(--mono);font-size:11px;box-shadow:0 10px 30px rgba(15,20,26,.12);position:relative;overflow:hidden}
 .tile b{font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
 .tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.28),transparent 55%)}
 .tile svg{width:38px;height:38px;opacity:.9}
@@ -142,7 +142,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
   .menu{display:grid}
   .links + .iconbtn{margin-left:auto}
   .links.open{display:flex;flex-direction:column;position:absolute;top:62px;left:var(--gutter);right:var(--gutter);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
-  .mosaic{inset:auto -40% -30% -10%;height:55%;opacity:.35}
+  .mosaic{top:auto;bottom:-60%;left:-10%;opacity:.35}
   .hero::before{background:linear-gradient(180deg,var(--bg) 55%,color-mix(in srgb,var(--bg) 60%,transparent))}
   .about,.cfp{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -367,7 +367,7 @@ const tiles=[
  ["Continual learning","brain","--t5","adapt online"],["Evaluation","shield","--t1","benchmarks"],["Tool use","arm","--t7","skills"],["Task decomposition","plan","--t4","hierarchy"]
 ];
 const m=document.getElementById('mosaic');
-m.innerHTML=[...tiles,...tiles.slice(0,8)].map(([t,i,c,s],k)=>`<div class="tile" style="background:linear-gradient(140deg,var(${c}),color-mix(in srgb,var(${c}) 55%,#0f141a));${k%2?'transform:translateY(40px)':''}">${icons[i]}<div><div style="opacity:.75;margin-bottom:4px">${s}</div><b>${t}</b></div></div>`).join('');
+m.innerHTML=[...tiles,...tiles,...tiles,...tiles].slice(0,63).map(([t,i,c,s],k)=>`<div class="tile" style="background:linear-gradient(140deg,var(${c}),color-mix(in srgb,var(${c}) 55%,#0f141a));">${icons[i]}<div><div style="opacity:.75;margin-bottom:4px">${s}</div><b>${t}</b></div></div>`).join('');
 
 // theme
 const root=document.documentElement;
