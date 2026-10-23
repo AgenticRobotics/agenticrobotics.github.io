@@ -101,17 +101,17 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(38px,5vw,60px);let
 .settings{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:14.5px}
 .pill{font-size:13.5px;padding:5px 12px;border-radius:999px;background:var(--chip);color:var(--ink)}
 
-.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.person{padding:22px;display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .15s,border-color .15s}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.person{padding:22px 18px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;text-decoration:none;transition:transform .15s,border-color .15s}
 a.person:hover{transform:translateY(-2px);border-color:var(--faint)}
-.avatar{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px;color:#fff}
+.avatar{width:128px;height:128px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:40px;color:#fff;object-fit:cover;background:var(--chip);box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--line)}
 .person h3{margin:0;font-size:17.5px}
-.person .aff{color:var(--muted);font-size:14.5px;line-height:1.45}
+.person .aff{color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:4px}
 .person .bio{color:var(--muted);font-size:14px;line-height:1.5}
 .tag{align-self:flex-start;font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
 .tag.acc{background:var(--accent-soft);color:var(--accent)}
-.speakers{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
-.tbd-card{border-style:dashed;box-shadow:none;background:transparent;align-items:flex-start;justify-content:center;color:var(--faint)}
+.speakers{grid-template-columns:repeat(4,1fr)}
+.tbd-card{border-style:dashed;box-shadow:none;background:transparent;color:var(--faint)}
 .tbd-card .avatar{background:var(--chip);color:var(--faint)}
 
 table{width:100%;border-collapse:collapse}
@@ -151,6 +151,8 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
   .q{grid-template-columns:44px 1fr;padding:20px}
   .q .num{font-size:30px}
   .sched td:first-child{width:110px}
+  .people,.speakers{grid-template-columns:repeat(2,1fr)}
+  .avatar{width:96px;height:96px;font-size:30px}
   .contact{padding:30px}
 }
 @media (max-width:520px){ .brand span{display:none} .meta{font-size:12.5px} }
@@ -172,7 +174,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
       <a href="#cfp">Call for Papers</a>
       <a href="#organizers">Organizers</a>
     </nav>
-    <a class="iconbtn" href="https://github.com/AgenticRobotics" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+    <a class="iconbtn" id="openreview" href="#" aria-label="OpenReview" title="OpenReview (link coming soon)" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M5 2.5h10.5L20 7v14.5H5z"/><path d="M15 2.5V7.5h5" fill="currentColor"/></svg></a>
     <button class="iconbtn" id="theme" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
     <button class="iconbtn menu" id="menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -246,16 +248,12 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <p class="lede">More speakers to be announced.</p>
     <div class="people speakers">
       <a class="card person" href="https://web.stanford.edu/~pavone/index.html" target="_blank" rel="noopener">
-        <div class="avatar" style="background:var(--t1)">MP</div>
+        <img class="avatar" src="images/people/pavone.jpg" alt="Marco Pavone" loading="lazy">
         <div><h3>Marco Pavone</h3><div class="aff">Stanford University</div></div>
-        <div class="bio">Directs the Autonomous Systems Laboratory at Stanford. Works on the analysis, design, and control of autonomous systems.</div>
-        <span class="tag acc">To be confirmed</span>
       </a>
       <a class="card person" href="https://xiaolonw.github.io/" target="_blank" rel="noopener">
-        <div class="avatar" style="background:var(--t3)">XW</div>
-        <div><h3>Xiaolong Wang</h3><div class="aff">Meta Superintelligence Labs · UC San Diego</div></div>
-        <div class="bio">Connects visual representation learning with physical interaction and robot skill learning.</div>
-        <span class="tag acc">To be confirmed</span>
+        <img class="avatar" src="images/people/xiaolong.jpg" alt="Xiaolong Wang" loading="lazy">
+        <div><h3>Xiaolong Wang</h3><div class="aff">Meta Superintelligence Labs<br>UC San Diego</div></div>
       </a>
       <div class="card person tbd-card">
         <div class="avatar">+</div>
@@ -338,20 +336,19 @@ const topics=[
 document.getElementById('topicGrid').innerHTML=topics.map(([t,d,c])=>`<div class="card topic"><h3><span class="dot" style="background:var(${c})"></span>${t}</h3><p>${d}</p><div class="bar" style="background:var(${c})"></div></div>`).join('');
 
 const orgs=[
- ["Yunbei Zhang","Tulane University","https://yunbeizhang.github.io/","Primary organizer","--t2",""],
- ["Yijiang Li","UC San Diego","https://williamium3000.github.io/","Secondary organizer","--t1",""],
- ["Weirui Ye","MIT CSAIL","https://yewr.github.io/","","--t3","Postdoc. Reinforcement learning, generative world models, agentic robotics, lifelong robot learning."],
- ["Zijian Jin","Meta","https://jinzijian.github.io/","","--t6","Research engineer. Coding agents, asynchronous RL, scalable post-training."],
- ["Xilun Zhang","Stanford University","https://xilunzhangrobo.github.io/","","--t4","Ph.D. student. Adaptive robotic systems, dynamics learning, test-time verification."],
- ["Janet Wang","Tulane University","","","--t7","Ph.D. student. Reliable visual recognition, transfer learning, generative modeling for medical imaging."],
- ["Isabella Liu","UC San Diego","https://www.liuisabella.com/","","--t5","Ph.D. candidate. Embodied agents, robot learning, 3D world modeling."],
- ["Mengyue Yang","University of Bristol","https://ymy4323460.github.io/","","--t1","Lecturer in AI. Reinforcement learning and causality, causal world models."]
+ ["Yunbei Zhang","Tulane University","https://yunbeizhang.github.io/","yunbei","--t2"],
+ ["Yijiang Li","UC San Diego","https://williamium3000.github.io/","yijiang","--t1"],
+ ["Weirui Ye","MIT CSAIL","https://yewr.github.io/","weirui","--t3"],
+ ["Zijian Jin","Meta","https://jinzijian.github.io/","zijian","--t6"],
+ ["Xilun Zhang","Stanford University","https://xilunzhangrobo.github.io/","xilun","--t4"],
+ ["Janet Wang","Tulane University","https://scholar.google.com/citations?user=yCllQqIAAAAJ","","--t7"],
+ ["Isabella Liu","UC San Diego","https://www.liuisabella.com/","isabella","--t5"],
+ ["Mengyue Yang","University of Bristol","https://ymy4323460.github.io/","mengyue","--t1"]
 ];
 const ini=n=>n.split(' ').map(s=>s[0]).join('');
-document.getElementById('orgGrid').innerHTML=orgs.map(([n,a,u,role,c,bio])=>{
-  const tag=`<div class="tag${role?' acc':''}">${role||'Organizer'}</div>`;
-  const inner=`<div class="avatar" style="background:var(${c})">${ini(n)}</div><div><h3>${n}</h3><div class="aff">${a}</div></div>${bio?`<div class="bio">${bio}</div>`:''}${tag}`;
-  return u?`<a class="card person" href="${u}" target="_blank" rel="noopener">${inner}</a>`:`<div class="card person">${inner}</div>`;
+document.getElementById('orgGrid').innerHTML=orgs.map(([n,a,u,img,c])=>{
+  const av=img?`<img class="avatar" src="images/people/${img}.jpg" alt="${n}" loading="lazy">`:`<div class="avatar" style="background:var(${c})">${ini(n)}</div>`;
+  return `<a class="card person" href="${u}" target="_blank" rel="noopener">${av}<div><h3>${n}</h3><div class="aff">${a}</div></div></a>`;
 }).join('');
 
 // decorative hero mosaic
