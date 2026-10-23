@@ -195,7 +195,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <div class="stat"><div class="n">½</div><div class="l">day, in person</div><div class="s">invited talks · papers · discussion</div></div>
     <div class="stat"><div class="n">5</div><div class="l">driving questions</div><div class="s">perception → deployment</div></div>
     <div class="stat"><div class="n">7</div><div class="l">topic areas</div><div class="s">across the full robot stack</div></div>
-    <div class="stat"><div class="n">7</div><div class="l">organizers</div><div class="s">6 institutions</div></div>
+    <div class="stat"><div class="n">9</div><div class="l">organizers</div><div class="s">9 institutions</div></div>
   </div>
 
   <section class="block" id="about">
@@ -245,7 +245,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
       </a>
       <a class="card person" href="https://xiaolonw.github.io/" target="_blank" rel="noopener">
         <img class="avatar" src="images/people/xiaolong.jpg" alt="Xiaolong Wang" loading="lazy">
-        <div><h3>Xiaolong Wang</h3><div class="aff">Meta Superintelligence Labs<br>UC San Diego</div></div>
+        <div><h3>Xiaolong Wang</h3><div class="aff">UCSD</div></div>
       </a>
       <div class="card person tbd-card">
         <div class="avatar">+</div>
@@ -329,12 +329,14 @@ document.getElementById('topicGrid').innerHTML=topics.map(([t,d,c])=>`<div class
 
 const orgs=[
  ["Yunbei Zhang","Tulane University","https://yunbeizhang.github.io/","yunbei","--t2"],
- ["Yijiang Li","UC San Diego","https://williamium3000.github.io/","yijiang","--t1"],
+ ["Yijiang Li","UCSD","https://williamium3000.github.io/","yijiang","--t1"],
  ["Weirui Ye","MIT CSAIL","https://yewr.github.io/","weirui","--t3"],
  ["Mengyue Yang","University of Bristol","https://ymy4323460.github.io/","mengyue","--t1"],
  ["Zijian Jin","Meta","https://jinzijian.github.io/","zijian","--t6"],
  ["Xilun Zhang","Stanford University","https://xilunzhangrobo.github.io/","xilun","--t4"],
- ["Isabella Liu","UC San Diego","https://www.liuisabella.com/","isabella","--t5"]
+ ["Shilong Liu","Princeton University","https://lsl.zone/","shilong","--t5"],
+ ["Zhenfei Yin","University of Oxford","https://yinzhenfei.github.io/","zhenfei","--t7"],
+ ["Shuaicheng Niu","Nanyang Technological University","https://niushuaicheng.cn/","shuaicheng","--t2"]
 ];
 const ini=n=>n.split(' ').map(s=>s[0]).join('');
 document.getElementById('orgGrid').innerHTML=orgs.map(([n,a,u,img,c])=>{
