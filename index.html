@@ -46,13 +46,13 @@ a{color:inherit}
 /* hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
 .hero{--tl:max(var(--gutter),calc((100% - var(--maxw))/2 + var(--gutter)))}
-.mosaic{position:absolute;top:calc(50% - 443.5px - 483px);height:calc(887px + 966px);left:calc(var(--tl) + 335px);width:820px;display:grid;grid-template-columns:repeat(9,193px);grid-auto-rows:145px;gap:16px;transform:rotate(-12deg) skewX(4deg);opacity:.95;pointer-events:none}
+.mosaic{position:absolute;top:calc(50% - 443.5px - 483px);height:calc(887px + 966px);left:calc(var(--tl) + 335px);width:820px;display:grid;grid-template-columns:repeat(8,245px);grid-auto-rows:184px;gap:6px 14px;transform:rotate(-12deg) skewX(4deg);opacity:.95;pointer-events:none}
 
 
-.tile{border-radius:16px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:var(--mono);font-size:11px;box-shadow:0 10px 30px rgba(15,20,26,.12);position:relative;overflow:hidden}
-.tile b{font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.tile{border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:var(--mono);font-size:12px;box-shadow:0 10px 30px rgba(15,20,26,.12);position:relative;overflow:hidden}
+.tile b{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
 .tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.28),transparent 55%)}
-.tile svg{width:38px;height:38px;opacity:.9}
+.tile svg{width:44px;height:44px;opacity:.9}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 0,var(--bg) calc(var(--tl) + 335px),color-mix(in srgb,var(--bg) 70%,transparent) calc(var(--tl) + 535px),transparent calc(var(--tl) + 805px))}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.35;mask-image:linear-gradient(90deg,#000 0,#000 calc(var(--tl) + 355px),transparent calc(var(--tl) + 555px))}
 .hero .wrap{position:relative;z-index:2;width:100%}
@@ -372,7 +372,7 @@ const tiles=[
 ];
 const m=document.getElementById('mosaic');
 const tileHTML=([t,i,c,s],col)=>`<div class="tile" style="background:linear-gradient(140deg,var(${c}),color-mix(in srgb,var(${c}) 55%,#0f141a));${col%2?'transform:translateY(40px)':''}">${icons[i]}<div><div style="opacity:.75;margin-bottom:4px">${s}</div><b>${t}</b></div></div>`;
-let out='';for(let r=0;r<16;r++)for(let c=0;c<9;c++)out+=tileHTML(tiles[((r+13)*4+c)%tiles.length],c);
+let out='';for(let r=0;r<14;r++)for(let c=0;c<8;c++)out+=tileHTML(tiles[((r+13)*4+c)%tiles.length],c);
 m.innerHTML=out;
 
 // theme
