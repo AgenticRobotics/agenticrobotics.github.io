@@ -105,7 +105,7 @@ a.person:hover{transform:translateY(-2px);border-color:var(--faint)}
 .person .bio{color:var(--muted);font-size:14px;line-height:1.5}
 .tag{align-self:flex-start;font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
 .tag.acc{background:var(--accent-soft);color:var(--accent)}
-.speakers{grid-template-columns:repeat(4,1fr)}
+.speakers{grid-template-columns:repeat(3,1fr)}
 .tbd-card{border-style:dashed;box-shadow:none;background:transparent;color:var(--faint)}
 .tbd-card .avatar{background:var(--chip);color:var(--faint)}
 
@@ -195,7 +195,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <div class="stat"><div class="n">½</div><div class="l">day, in person</div><div class="s">invited talks · papers · discussion</div></div>
     <div class="stat"><div class="n">5</div><div class="l">driving questions</div><div class="s">perception → deployment</div></div>
     <div class="stat"><div class="n">7</div><div class="l">topic areas</div><div class="s">across the full robot stack</div></div>
-    <div class="stat"><div class="n">12</div><div class="l">organizers</div><div class="s">12 institutions</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">organizers</div><div class="s">13 institutions</div></div>
   </div>
 
   <section class="block" id="about">
@@ -239,10 +239,6 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <h2>Invited speakers</h2>
     <p class="lede">Invited talks on perception, learning, reasoning, and action in robotic systems.</p>
     <div class="people speakers">
-      <a class="card person" href="https://yilundu.github.io/" target="_blank" rel="noopener">
-        <img class="avatar" src="images/people/yilun.jpg" alt="Yilun Du" loading="lazy">
-        <div><h3>Yilun Du</h3><div class="aff">Harvard University</div></div>
-      </a>
       <a class="card person" href="https://jiajunwu.com/" target="_blank" rel="noopener">
         <img class="avatar" src="images/people/jiajun.jpg" alt="Jiajun Wu" loading="lazy">
         <div><h3>Jiajun Wu</h3><div class="aff">Stanford University</div></div>
@@ -349,7 +345,8 @@ const orgs=[
  ["Weirui Ye","MIT CSAIL","https://yewr.github.io/","weirui","--t3"],
  ["Angelique Taylor","Cornell Tech, Cornell University","https://www.angeliquemtaylor.com/","angelique","--t5"],
  ["Ismini Lourentzou","UIUC","https://isminoula.github.io/","ismini","--t3"],
- ["Shilong Liu","Princeton University &amp; Columbia University","https://lsl.zone/","shilong","--t5"]
+ ["Shilong Liu","Princeton University &amp; Columbia University","https://lsl.zone/","shilong","--t5"],
+ ["Yilun Du","Harvard University","https://yilundu.github.io/","yilun","--t4"]
 ];
 const ini=n=>n.split(' ').map(s=>s[0]).join('');
 document.getElementById('orgGrid').innerHTML=orgs.map(([n,a,u,img,c])=>{
