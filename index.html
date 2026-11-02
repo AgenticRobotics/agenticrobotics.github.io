@@ -100,8 +100,6 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(38px,5vw,60px);let
 .person{padding:22px 18px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;text-decoration:none;transition:transform .15s,border-color .15s}
 a.person:hover{transform:translateY(-2px);border-color:var(--faint)}
 .avatar{width:128px;height:128px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:40px;color:#fff;object-fit:cover;background:var(--chip);box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--line)}
-.avatar-peter{position:relative;overflow:hidden;background:#25333d}
-.avatar-peter img{position:absolute;left:50%;top:50%;height:125%;width:auto;max-width:none;transform:translate(-50%,-50%)}
 .person h3{margin:0;font-size:17.5px}
 .person .aff{color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:4px}
 .person .bio{color:var(--muted);font-size:14px;line-height:1.5}
@@ -268,7 +266,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
         <div><h3>Cordelia Schmid</h3><div class="aff">Inria Paris &amp; Google Research</div></div>
       </a>
       <a class="card person" href="https://www.cs.utexas.edu/~pstone/" target="_blank" rel="noopener">
-        <span class="avatar avatar-peter"><img src="images/people/peter.png" alt="Peter Stone" loading="lazy"></span>
+        <img class="avatar" src="images/people/peter-zoomout.png" alt="Peter Stone" loading="lazy">
         <div><h3>Peter Stone</h3><div class="aff">University of Texas at Austin</div></div>
       </a>
     </div>
