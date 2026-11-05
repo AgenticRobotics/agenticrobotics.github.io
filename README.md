@@ -16,3 +16,6 @@ Latest roster update (November 4, 2026): remove Zhenfei Yin from the organizer c
 
 
 Seven-speaker update (November 4, 2026): add Gedas Bertasius (UNC Chapel Hill) after Peter Stone. His portrait is the 407×542 JPEG served on his homepage at https://static.wixstatic.com/media/77d769_83c98e22f52a44dda0f9891c3d28bf0c~mv2.jpg/v1/fill/w_407,h_542,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/77d769_83c98e22f52a44dda0f9891c3d28bf0c~mv2.jpg and is stored as `images/people/gedas.jpg`. Use four columns for speakers on desktop (4+3) and two on mobile. Preserve thirteen organizers, their order, and the existing portraits. Each invited slot is 20 minutes including five-minute Q&A; opening five minutes, panel 25, posters/screen demos 50, closing ten. The revised schedule remains 08:30–13:00 and matches the proposal.
+
+
+Abstract wording update (November 4, 2026): use the same 89-word formal abstract as the proposal, introducing cross-task and cross-environment skill reuse and adaptation, execution feedback, and failure recovery. Speaker/organizer rosters, timetable, and page layout are unchanged.
