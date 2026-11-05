@@ -204,9 +204,7 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <div class="about">
       <div class="card">
         <p class="kicker">Abstract</p>
-        <p>Advances in foundation models, robot learning, and world models create opportunities for robots to interpret instructions, plan over extended horizons, and adapt through feedback. This workshop brings together researchers in computer vision, robotics, and machine learning to examine the foundations and practice of agentic robotics.</p>
-        <p>Topics include grounded perception, planning, memory, policy learning, human and multi-robot collaboration, and evaluation. Through invited talks, contributed research, and discussion, we aim to identify shared challenges and opportunities for general-purpose embodied intelligence.</p>
-        <p>Our organizing theme is the relationship between individual capabilities and the behavior of the complete robotic system: how advances in visual understanding, planning, memory, policy learning, and interaction translate into effective action.</p>
+        <p>Agentic robotics connects perception, reasoning, and action in systems that pursue goals through physical interaction. Advances in frontier multimodal models and robot learning make it timely to examine how these capabilities combine into reliable, efficient robotic agents. This workshop brings together computer vision, robotics, and machine learning researchers to discuss grounded perception and tool use, code-based and learned policies, planning, memory and world models, adaptation, collaboration, and evaluation. Through invited talks, contributed papers, posters, and a panel, we aim to identify shared challenges and research priorities for general-purpose embodied intelligence.</p>
       </div>
       <div class="card">
         <p class="kicker">What we mean</p>
@@ -220,11 +218,11 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <h2>Driving questions</h2>
     <p class="lede">The workshop is organized around five questions.</p>
     <div class="questions">
-      <div class="card q"><div class="num">01</div><div><h3>How should perception support goal-directed behavior?</h3><p>What visual, spatial, and multimodal representations help robots understand objects, affordances, and changing environments?</p></div></div>
-      <div class="card q"><div class="num">02</div><div><h3>How should reasoning and planning connect to action?</h3><p>How can agents translate goals into executable behavior, coordinate high-level decisions with control, and revise plans using feedback?</p></div></div>
+      <div class="card q"><div class="num">01</div><div><h3>How should robotic agents perceive and acquire information for action?</h3><p>How can visual and spatial understanding, active perception, and calls to detection, segmentation, or 3D perception tools provide the information needed to act?</p></div></div>
+      <div class="card q"><div class="num">02</div><div><h3>How should reasoning, generated code, and planning connect to reliable execution?</h3><p>How can code-as-policy, learned policies, and planners compose skills and APIs, check execution outcomes, and recover from failure?</p></div></div>
       <div class="card q"><div class="num">03</div><div><h3>How can robotic agents learn and adapt through experience?</h3><p>What roles should demonstrations, reinforcement learning, memory, world models, and online interaction play in improving behavior?</p></div></div>
       <div class="card q"><div class="num">04</div><div><h3>How should robots collaborate with people and other agents?</h3><p>How can communication, shared understanding, and human guidance support effective cooperation?</p></div></div>
-      <div class="card q"><div class="num">05</div><div><h3>How should we evaluate and deploy agentic robotic systems?</h3><p>Which tasks, metrics, and experimental protocols capture generalization, reliability, safety, and efficiency across extended interactions?</p></div></div>
+      <div class="card q"><div class="num">05</div><div><h3>How should we evaluate and deploy reliable, efficient robotic agents?</h3><p>Which protocols measure generalization and safety alongside inference latency, computation, and resource use? When is additional reasoning worth its execution cost?</p></div></div>
     </div>
   </section>
 
@@ -274,43 +272,74 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
 
   <section class="block" id="schedule">
     <h2>Schedule</h2>
-    <p class="lede">Preliminary half-day program. Exact times depend on the slot assigned by CVPR. Talks will be recorded through CVPR's provided Zoom room.</p>
+    <p class="lede">Proposed 4.5-hour half-day program. The morning timetable below is in Seattle local time (PDT); the date and morning or afternoon slot will follow CVPR's allocation. Speaker order is to be arranged.</p>
     <div class="card sched">
-      <table>
-        <tr><td>TBD</td><td><b>Opening remarks</b></td></tr>
-        <tr><td>TBD</td><td><b>Invited talks</b><br><span>Talk order to be announced</span></td></tr>
-        <tr><td>TBD</td><td><b>Contributed paper presentations</b><br><span>Oral spotlights from accepted papers</span></td></tr>
-        <tr><td>TBD</td><td><b>Poster session</b></td></tr>
-        <tr><td>TBD</td><td><b>Panel discussion</b><br><span>Format to be announced</span></td></tr>
-        <tr><td>TBD</td><td><b>Closing remarks</b></td></tr>
+      <table aria-label="Proposed workshop schedule">
+        <tr><td>08:30–08:40</td><td><b>Opening remarks and workshop questions</b></td></tr>
+        <tr><td>08:40–09:00</td><td><b>Invited talk 1, including audience Q&amp;A</b></td></tr>
+        <tr><td>09:00–09:20</td><td><b>Invited talk 2, including audience Q&amp;A</b></td></tr>
+        <tr><td>09:20–09:40</td><td><b>Invited talk 3, including audience Q&amp;A</b></td></tr>
+        <tr><td>09:40–10:20</td><td><b>Four contributed talks, ten minutes each</b></td></tr>
+        <tr><td>10:20–11:10</td><td><b>Poster discussion and coffee break</b></td></tr>
+        <tr><td>11:10–11:30</td><td><b>Invited talk 4, including audience Q&amp;A</b></td></tr>
+        <tr><td>11:30–11:50</td><td><b>Invited talk 5, including audience Q&amp;A</b></td></tr>
+        <tr><td>11:50–12:10</td><td><b>Invited talk 6, including audience Q&amp;A</b></td></tr>
+        <tr><td>12:10–12:50</td><td><b>Panel: From agent capabilities to reliable robotic systems</b></td></tr>
+        <tr><td>12:50–13:00</td><td><b>Community priorities and closing remarks</b></td></tr>
       </table>
     </div>
+    <p style="color:var(--muted);margin-top:18px">Each invited talk includes five minutes for audience questions; each contributed talk includes two. The panel will discuss inference cost, perception tools, code and policies, failure recovery, generalization, safety, and human oversight. Talks will use CVPR's provided Zoom recording setup, with access and release following conference arrangements and speaker permissions.</p>
   </section>
 
   <section class="block" id="cfp">
     <h2>Call for papers</h2>
-    <p class="lede">We invite submissions on any topic listed above. Submission format, page limits, review process, and archival options will be announced soon.</p>
+    <p class="lede">Our proposed non-archival track welcomes original research, preliminary results, systems, benchmarks, and position papers. Submission arrangements will be finalized after the workshop proposal decision.</p>
     <div class="cfp">
       <div class="card">
-        <p class="kicker">Important dates</p>
+        <p class="kicker">Proposed paper dates</p>
         <table class="dates">
-          <tr><td>Submission portal opens</td><td><span class="tbd">TBD</span></td></tr>
-          <tr><td>Paper submission deadline</td><td><span class="tbd">TBD</span></td></tr>
-          <tr><td>Notification to authors</td><td><span class="tbd">TBD</span></td></tr>
-          <tr><td>Camera-ready deadline</td><td><span class="tbd">TBD</span></td></tr>
+          <tr><td>Call for papers and submission instructions</td><td>Jan 15, 2027</td></tr>
+          <tr><td>CVPR main-track decisions</td><td>Feb 25, 2027</td></tr>
+          <tr><td>Paper submission deadline</td><td>Mar 12, 2027</td></tr>
+          <tr><td>Notification to authors</td><td>Apr 9, 2027</td></tr>
+          <tr><td>Final non-archival versions</td><td>May 21, 2027</td></tr>
+          <tr><td>Finalized workshop program</td><td>May 28, 2027</td></tr>
           <tr><td>Workshop day</td><td>June 20 or 21, 2027</td></tr>
         </table>
-        <p style="color:var(--faint);font-size:13.5px;margin:14px 0 0">All deadlines are 23:59 Anywhere on Earth (AoE).</p>
+        <p style="color:var(--muted);font-size:13.5px;margin:14px 0 0">Deadlines are 23:59 Anywhere on Earth (AoE). The proposed submission deadline leaves 15 days after the official main-track decisions; we will preserve at least two weeks if that date changes.</p>
       </div>
       <div class="card">
-        <p class="kicker">Submission details</p>
+        <p class="kicker">Proposed submission details</p>
         <ul class="clean">
-          <li>Format and page limit: <span class="tbd">TBD</span></li>
-          <li>Archival / non-archival track: <span class="tbd">TBD</span></li>
-          <li>Review: double-blind, by the program committee <span class="tbd">TBD</span></li>
-          <li>Submission portal (OpenReview): <span class="tbd">TBD</span></li>
-          <li>Challenge or competition: <span class="tbd">TBD</span></li>
+          <li>Short papers: up to 4 pages of main text; long papers: up to 8 pages, excluding references.</li>
+          <li>Use the CVPR 2027 paper template. Video and code supplements are encouraged.</li>
+          <li>Non-archival: accepted work will be shared through OpenReview and this website with author permission, without proceedings publication.</li>
+          <li>Double-blind review, with three independent reviews per paper.</li>
+          <li>Accepted papers receive posters; four will be selected for contributed talks.</li>
+          <li>Submission portal: OpenReview link to be announced.</li>
+          <li>No standalone competition is planned.</li>
         </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px;padding:28px 30px">
+      <p class="kicker">Initial program committee</p>
+      <p>Yijiang Li, Isabella Liu, Xilun Zhang, Zhenfei Yin, Shuaicheng Niu, Mengyue Yang, Weirui Ye, and Jiayuan Mao form the proposed initial committee. The committee will expand as external invitations are accepted. We aim to recruit 100–150 reviewers across vision, robot learning, multimodal reasoning, planning, and evaluation, with a typical load of three to five papers per reviewer.</p>
+    </div>
+  </section>
+
+  <section class="block" id="participation">
+    <h2>Participation and support</h2>
+    <p class="lede">We welcome participation across career stages, research communities, institutions, and regions.</p>
+    <div class="about">
+      <div class="card">
+        <p class="kicker">Diversity and participation grants</p>
+        <p>Our organizing team includes Ph.D. students, postdoctoral researchers, faculty, and industry researchers at institutions in the United States, the United Kingdom, and Singapore. Our speakers bring academic and industrial perspectives on visual understanding, robot learning, planning, control, and multiagent systems.</p>
+        <p>We have secured <strong>USD 8,000 in sponsorship</strong> to support registration and travel grants for students, early-career researchers, and participants with limited institutional funding. Awards will prioritize financial need and participation barriers. Application instructions, available amounts, and selection criteria will be announced here.</p>
+      </div>
+      <div class="card">
+        <p class="kicker">Mentoring, accessibility, and materials</p>
+        <p>We will pair junior reviewers with experienced program committee members for constructive review guidance and feedback. Targeted outreach will encourage participation from institutions and communities with fewer opportunities to attend major vision and robotics meetings.</p>
+        <p>We will collect audience questions in advance and encourage accessible slides and author-approved presentation materials. Recordings and any prerecorded alternatives will follow CVPR's arrangements and speaker permissions. This website will link accepted papers, approved materials, and a synthesis of the panel's open questions and research priorities.</p>
       </div>
     </div>
   </section>
@@ -335,13 +364,41 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
 
 <script>
 const topics=[
- ["Perception and physical grounding","Active perception, spatial reasoning, 3D scene understanding, affordances, and multimodal representations for action.","--t1"],
- ["Foundation models and agent architectures","Vision-language-action models, generalist robot policies, hierarchical and modular agents, and interfaces between foundation models and robotic skills.","--t3"],
- ["Reasoning, planning, and execution","Task decomposition, language-conditioned planning, tool use, feedback-driven control, execution monitoring, and failure recovery.","--t2"],
- ["Memory, world models, and learning","Experience retrieval, persistent state, predictive models, imitation and reinforcement learning, continual learning, and adaptation through interaction.","--t4"],
- ["Human–robot and multi-agent collaboration","Instruction following, communication, human feedback, shared autonomy, multi-robot coordination, and collaborative decision-making.","--t5"],
- ["Data, simulation, and evaluation","Robot datasets, simulation, sim-to-real transfer, benchmarks, reproducibility, and evaluation of complete robotic agents.","--t6"],
- ["Reliable and efficient deployment","Safety, uncertainty, robustness, real-time inference, resource constraints, and operation in changing environments.","--t7"]
+ [
+  "Perception and physical grounding",
+  "Active perception, spatial reasoning, 3D scene understanding, affordances, and perception tools and APIs for action.",
+  "--t1"
+ ],
+ [
+  "Foundation models and agent architectures",
+  "Multimodal models, vision-language-action models, generalist policies, and modular, hierarchical, or end-to-end robotic agents.",
+  "--t3"
+ ],
+ [
+  "Reasoning, planning, and execution",
+  "Task and motion planning, generated programs, code-as-policy, skill composition, execution monitoring, and feedback-driven failure recovery.",
+  "--t2"
+ ],
+ [
+  "Memory, world models, and learning",
+  "Experience retrieval, persistent state, predictive models, imitation and reinforcement learning, and continual adaptation.",
+  "--t4"
+ ],
+ [
+  "Human–robot and multi-agent collaboration",
+  "Instruction following, communication, human feedback, shared autonomy, and multi-robot coordination.",
+  "--t5"
+ ],
+ [
+  "Data, simulation, and evaluation",
+  "Datasets, simulation, sim-to-real transfer, benchmarks, reproducibility, and evaluation of complete agents.",
+  "--t6"
+ ],
+ [
+  "Reliable and efficient deployment",
+  "Safety, uncertainty, robustness, real-time inference, adaptive computation, and latency, energy, and resource constraints.",
+  "--t7"
+ ]
 ];
 document.getElementById('topicGrid').innerHTML=topics.map(([t,d,c])=>`<div class="card topic"><h3><span class="dot" style="background:var(${c})"></span>${t}</h3><p>${d}</p><div class="bar" style="background:var(${c})"></div></div>`).join('');
 
