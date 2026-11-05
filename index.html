@@ -105,7 +105,7 @@ a.person:hover{transform:translateY(-2px);border-color:var(--faint)}
 .person .bio{color:var(--muted);font-size:14px;line-height:1.5}
 .tag{align-self:flex-start;font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
 .tag.acc{background:var(--accent-soft);color:var(--accent)}
-.speakers{grid-template-columns:repeat(3,1fr)}
+.speakers{grid-template-columns:repeat(4,minmax(0,1fr))}
 .tbd-card{border-style:dashed;box-shadow:none;background:transparent;color:var(--faint)}
 .tbd-card .avatar{background:var(--chip);color:var(--faint)}
 
@@ -267,6 +267,10 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
         <img class="avatar" src="images/people/peter-zoomout.png" alt="Peter Stone" loading="lazy">
         <div><h3>Peter Stone</h3><div class="aff">University of Texas at Austin</div></div>
       </a>
+      <a class="card person" href="https://www.gedasbertasius.com/" target="_blank" rel="noopener">
+        <img class="avatar" src="images/people/gedas.jpg" alt="Gedas Bertasius" loading="lazy">
+        <div><h3>Gedas Bertasius</h3><div class="aff">UNC Chapel Hill</div></div>
+      </a>
     </div>
   </section>
 
@@ -275,20 +279,21 @@ footer{padding:40px 0 48px;color:var(--faint);font-size:14px;display:flex;flex-w
     <p class="lede">Proposed 4.5-hour half-day program. The morning timetable below is in Seattle local time (PDT); the date and morning or afternoon slot will follow CVPR's allocation. Speaker order is to be arranged.</p>
     <div class="card sched">
       <table aria-label="Proposed workshop schedule">
-        <tr><td>08:30–08:40</td><td><b>Opening remarks and workshop questions</b></td></tr>
-        <tr><td>08:40–09:00</td><td><b>Invited talk 1, including audience Q&amp;A</b></td></tr>
-        <tr><td>09:00–09:20</td><td><b>Invited talk 2, including audience Q&amp;A</b></td></tr>
-        <tr><td>09:20–09:40</td><td><b>Invited talk 3, including audience Q&amp;A</b></td></tr>
-        <tr><td>09:40–10:20</td><td><b>Four contributed talks, ten minutes each</b></td></tr>
-        <tr><td>10:20–11:10</td><td><b>Poster discussion and coffee break</b></td></tr>
-        <tr><td>11:10–11:30</td><td><b>Invited talk 4, including audience Q&amp;A</b></td></tr>
-        <tr><td>11:30–11:50</td><td><b>Invited talk 5, including audience Q&amp;A</b></td></tr>
-        <tr><td>11:50–12:10</td><td><b>Invited talk 6, including audience Q&amp;A</b></td></tr>
-        <tr><td>12:10–12:50</td><td><b>Panel: From agent capabilities to reliable robotic systems</b></td></tr>
+        <tr><td>08:30–08:35</td><td><b>Opening remarks and workshop questions</b></td></tr>
+        <tr><td>08:35–08:55</td><td><b>Invited talk 1, including audience Q&amp;A</b></td></tr>
+        <tr><td>08:55–09:15</td><td><b>Invited talk 2, including audience Q&amp;A</b></td></tr>
+        <tr><td>09:15–09:35</td><td><b>Invited talk 3, including audience Q&amp;A</b></td></tr>
+        <tr><td>09:35–10:15</td><td><b>Four contributed talks, ten minutes each</b></td></tr>
+        <tr><td>10:15–11:05</td><td><b>Poster and screen-based demo session; coffee break</b></td></tr>
+        <tr><td>11:05–11:25</td><td><b>Invited talk 4, including audience Q&amp;A</b></td></tr>
+        <tr><td>11:25–11:45</td><td><b>Invited talk 5, including audience Q&amp;A</b></td></tr>
+        <tr><td>11:45–12:05</td><td><b>Invited talk 6, including audience Q&amp;A</b></td></tr>
+        <tr><td>12:05–12:25</td><td><b>Invited talk 7, including audience Q&amp;A</b></td></tr>
+        <tr><td>12:25–12:50</td><td><b>Panel: From agent capabilities to reliable robotic systems</b></td></tr>
         <tr><td>12:50–13:00</td><td><b>Community priorities and closing remarks</b></td></tr>
       </table>
     </div>
-    <p style="color:var(--muted);margin-top:18px">Each invited talk includes five minutes for audience questions; each contributed talk includes two. The panel will discuss inference cost, perception tools, code and policies, failure recovery, generalization, safety, and human oversight. Talks will use CVPR's provided Zoom recording setup, with access and release following conference arrangements and speaker permissions.</p>
+    <p style="color:var(--muted);margin-top:18px">Each of the seven invited talks has a 20-minute slot: 15 minutes for the presentation and five minutes for audience questions. Each contributed talk includes two minutes for questions. The panel lasts 25 minutes; posters and screen-based demos retain 50 minutes, and community priorities and closing remarks retain ten minutes. The panel will discuss inference cost, perception tools, code and policies, failure recovery, generalization, safety, and human oversight. Talks will use CVPR's provided Zoom recording setup, with access and release following conference arrangements and speaker permissions.</p>
   </section>
 
   <section class="block" id="cfp">
