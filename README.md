@@ -21,14 +21,4 @@ Seven-speaker update (November 4, 2026): add Gedas Bertasius (UNC Chapel Hill) a
 Abstract wording update (November 4, 2026): use the same 89-word formal abstract as the proposal, introducing cross-task and cross-environment skill reuse and adaptation, execution feedback, and failure recovery. Speaker/organizer rosters, timetable, and page layout are unchanged.
 
 
-## Current proposal alignment — November 4, 2026
-
-The current Overleaf proposal is the source for workshop facts and plans. The public website keeps concise biographies and affiliation abbreviations, including UIUC and NTU. Speaker confirmation labels remain in the submission PDF only. Pending commented people remain hidden.
-
-- Thirteen organizers and their order are unchanged. Preserve the existing affiliation display and institution-count subtitle. The user explicitly requested retaining Shilong's Princeton University & Columbia University wording.
-- Seven speakers appear as Jiajun Wu, Sherry Yang, Sifei Liu, Marco Pavone, Cordelia Schmid, Peter Stone, and Gedas Bertasius. The desktop grid remains four plus three and the mobile grid remains two columns. All portraits are unchanged.
-- The formal abstract, five questions, seven topics, non-archival plan, seven-person initial PC, paper dates, and all 08:30–13:00 slots agree with the proposal. Session labels now use the same wording and spell out presentation/Q&A allocations. The panel is titled Reliable robotic systems.
-- Explicit diversity dimensions and fair-evaluation commitments now match the PDF, alongside the existing secured USD 8,000 sponsorship and grants. The materials plan includes evaluation questions, execution/recovery failures, and shared-benchmark opportunities.
-- The website does not reproduce the PDF's long bios, speaker confirmation table, related-work comparison, internal organization milestones, or room/equipment requests. Its author-facing deadlines remain complete.
-
-Earlier notes above are retained as revision history. These current counts, ordering, and display choices supersede older entries.
+Current website scope (November 4, 2026): keep the public site concise. Match the proposal's organizer/speaker rosters, order, topics, and core dates. Do not copy proposal-only diversity/fair-review expansions, organizing-experience summaries, panel titles, presentation/Q&A instructions, or detailed outcome plans onto the site. Preserve existing affiliations, photos, and pending comments. Current speaker order: Jiajun Wu, Sherry Yang, Sifei Liu, Marco Pavone, Cordelia Schmid, Peter Stone, Gedas Bertasius. This scope supersedes the previous expanded-content synchronization.
